@@ -26,7 +26,7 @@ class ScreenshotManager {
 
       await this.closeCookieBanner(page);
 
-      // Capture visible screenshots for both mobile and desktop views
+      // Capture visible screenshots for both mobile desktop views
       await VisibleScreenshot.capture(page, url);
 
       // Full-page screenshot with accordions closed
