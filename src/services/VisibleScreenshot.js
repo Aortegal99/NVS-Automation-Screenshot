@@ -22,7 +22,14 @@ class VisibleScreenshot {
   }
 
   static sanitizeUrl(url) {
-    return url.replace(/https?:\/\//, '').replace(/[^a-z0-9]/gi, '_');
+    let sanitizedPart = url.includes('@') 
+      ? url.split('@')[1] // Extract the part after '@'
+      : url.replace(/https?:\/\//, ''); // Remove the protocol if no '@'
+  
+    // Replace '/' with '-' and remove any invalid filename characters
+    sanitizedPart = sanitizedPart.replace(/\//g, '-').replace(/[^a-z0-9-]/gi, '_'); 
+  
+    return sanitizedPart;
   }
 }
 

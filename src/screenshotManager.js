@@ -59,7 +59,6 @@ class ScreenshotManager {
 
   // Function to hide the cookie banner using CSS injection
   async closeCookieBanner(page) {
-    console.log("entro a cookie banner");
     try {
       const cookieButtonSelector = '#onetrust-accept-btn-handler';
       const button = await page.$(cookieButtonSelector);
